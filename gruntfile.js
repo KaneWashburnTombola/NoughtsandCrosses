@@ -15,7 +15,21 @@
                 },
                 mainappsounds:{
                     cwd:'',
-                    src:['']
+                    src:['main-app/app/sounds/ready aim fire.mp3'],
+                    dest:'.build/',
+                    expand:true
+                },
+                html:{
+                    cwd:'',
+                    src:['main-app/app/index.html'],
+                    dest:'.build/',
+                    expand:true
+                },
+                bower:{
+                    cwd:'',
+                    src:['bower_components/**/*.*'],
+                    dest:'.build/main-app/app/thirdparty/',
+                    expand:true
                 }
             }
         });
