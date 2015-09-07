@@ -1,0 +1,28 @@
+{
+  "name": "noughtsandcrosses",
+  "version": "1.0.0",
+  "description": "My noughts and crosses game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaneWashburnTombola/NoughtsandCrosses.git"
+  },
+  "keywords": [
+    "git",
+    "html",
+    "grunt",
+    "angular"
+  ],
+  "author": "Kane Washburn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KaneWashburnTombola/NoughtsandCrosses/issues"
+  },
+  "homepage": "https://github.com/KaneWashburnTombola/NoughtsandCrosses#readme",
+  "devDependencies": {
+    "bower": "^1.5.2"
+  }
+}
