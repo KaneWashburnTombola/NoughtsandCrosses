@@ -1,0 +1,26 @@
+{
+  "name": "noughtsandcrosses",
+  "version": "0.0.0",
+  "homepage": "https://github.com/KaneWashburnTombola/NoughtsandCrosses",
+  "authors": [
+    "Kane Washburn <Kane.Washburn@tombola.com>"
+  ],
+  "description": "my noughts and crosses bower",
+  "keywords": [
+    "grunt",
+    "git",
+    "html",
+    "angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5"
+  }
+}
