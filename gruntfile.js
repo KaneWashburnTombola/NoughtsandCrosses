@@ -12,6 +12,10 @@
                     src:['main-app/app/images/batman.jpg'],
                     dest:'.build/',
                     expand:true
+                },
+                mainappsounds:{
+                    cwd:'',
+                    src:['']
                 }
             }
         });
