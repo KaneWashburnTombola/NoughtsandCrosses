@@ -5,15 +5,11 @@
     'use strict';
     module.exports={
         lintCheck: {
-            src:['main-app/app/less/*.less'],
-            development: {
-                options: {
-                    paths: ['.build/main-app/app/css/']
-                },
-                files: {
-                    ".build/main-app/app/css/": "main-app/app/less/*.less"
-                }
-            }
+            src:'**/*.less',
+            cwd:'main-app/app/less/',
+            dest:'.build/main-app/app/css/',
+            expand:true,
+            ext:'.css'
         }
     };
 })();
