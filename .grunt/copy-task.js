@@ -18,7 +18,7 @@
         },
         html:{
             cwd:'',
-            src:['main-app/app/index.html'],
+            src:['main-app/app/*.html'],
             dest:'.build/',
             expand:true
         },
