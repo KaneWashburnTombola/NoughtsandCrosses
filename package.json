@@ -24,5 +24,9 @@
   "homepage": "https://github.com/KaneWashburnTombola/NoughtsandCrosses#readme",
   "devDependencies": {
     "bower": "^1.5.2"
+  },
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13"
   }
 }
