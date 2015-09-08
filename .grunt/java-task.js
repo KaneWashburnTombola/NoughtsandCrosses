@@ -2,8 +2,8 @@
     'use strict';
     module.exports={
         concat:{
-            cwd:'main-app/app/scripts/',
-            src:'**/*.js',
+            cwd:'',
+            src:'main-app/app/scripts/**/*.js',
             dest:'.build/main-app/app/scripts/app.js',
             expand:false
         },
