@@ -23,6 +23,11 @@
                     files: 'main-app/app/less/**/*.less',
                     tasks:'lessFiles',
                     spawn:false
+                },
+                html:{
+                    files:'main-app/app/index.html',
+                    tasks:'editHtml',
+                    spawn:false
                 }
             }
 
@@ -34,8 +39,9 @@
         grunt.loadNpmTasks('grunt-contrib-concat');
         grunt.loadNpmTasks('grunt-contrib-clean');
         grunt.loadNpmTasks('grunt-contrib-watch');
+        grunt.registerTask('editHtml',['clean:html','copy:html','watch:html']);
         grunt.registerTask('lessFiles',['lesslint','clean:css','less','watch:css']);
         grunt.registerTask('jsFiles',['jshint','clean:javascript','concat:concat','watch:javascript']);
-        grunt.registerTask('default',['copy','lessFiles','jsFiles']);
+        grunt.registerTask('default',['editHtml','lessFiles','jsFiles','copy']);
     };
 })();

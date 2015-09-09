@@ -6,6 +6,9 @@
         },
         css:{
             src:'.build/main-app/app/css/main.css'
+        },
+        html:{
+            src:'.build/main-app/app/index.html'
         }
     }
 
