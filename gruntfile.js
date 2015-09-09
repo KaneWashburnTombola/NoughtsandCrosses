@@ -4,7 +4,6 @@
     var lessTask = require('./.grunt/less-task');
     var javaTask = require('./.grunt/java-task');
     var cleanTask= require('./.grunt/clean-task');
-    //var watchTask= require('./.grunt/watch-task');
     module.exports = function(grunt) {
         grunt.initConfig({
             pkg:grunt.file.readJSON('package.json'),
