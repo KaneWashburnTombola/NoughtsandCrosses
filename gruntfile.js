@@ -39,9 +39,9 @@
         grunt.loadNpmTasks('grunt-contrib-concat');
         grunt.loadNpmTasks('grunt-contrib-clean');
         grunt.loadNpmTasks('grunt-contrib-watch');
-        grunt.registerTask('editHtml',['clean:html','copy:html','watch:html']);
-        grunt.registerTask('lessFiles',['lesslint','clean:css','less','watch:css']);
-        grunt.registerTask('jsFiles',['jshint','clean:javascript','concat:concat','watch:javascript']);
-        grunt.registerTask('default',['lessFiles','editHtml','jsFiles']);
+        grunt.registerTask('editHtml',['clean:html','copy:html','watch']);
+        grunt.registerTask('lessFiles',['lesslint','clean:css','less','watch']);
+        grunt.registerTask('jsFiles',['jshint','clean:javascript','concat:concat','watch']);
+        grunt.registerTask('default',['watch']);
     };
 })();

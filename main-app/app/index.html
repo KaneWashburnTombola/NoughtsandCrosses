@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="Tombola.setup">
 <head>
+    <script src="scripts/app.js"></script>
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body>
-<script src="scripts/app.js"></script>
+<body ng-controller="TextContoller">
+<h1>{{titleMessage}}</h1>
 <img src="images/batman.jpg">
 <audio controls loop>
     <source src="sounds/Ready%20Aim%20Fire.mp3" type="audio/mp3">
 </audio>
 </body>
-</html>

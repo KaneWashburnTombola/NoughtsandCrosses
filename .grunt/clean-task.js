@@ -10,6 +10,6 @@
         html:{
             src:'.build/main-app/app/index.html'
         }
-    }
+    };
 
 })();
