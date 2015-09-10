@@ -26,12 +26,10 @@
                 },
                 html:{
                     files:'main-app/app/index.html',
-                    tasks:'editHtml',
+                    tasks:'copy:html',
                     spawn:false
                 }
-
             }
-
         });
         grunt.loadNpmTasks('grunt-contrib-copy');
         grunt.loadNpmTasks('grunt-lesslint');
@@ -40,9 +38,8 @@
         grunt.loadNpmTasks('grunt-contrib-concat');
         grunt.loadNpmTasks('grunt-contrib-clean');
         grunt.loadNpmTasks('grunt-contrib-watch');
-        grunt.registerTask('editHtml',['copy:html','watch']);
-        grunt.registerTask('lessFiles',['lesslint','clean:css','less','watch']);
-        grunt.registerTask('jsFiles',['jshint','clean:javascript','concat:concat','watch']);
+        grunt.registerTask('lessFiles',['lesslint','clean:css','less']);
+        grunt.registerTask('jsFiles',['jshint','clean:javascript','concat:concat']);
         grunt.registerTask('default',['watch']);
     };
 })();

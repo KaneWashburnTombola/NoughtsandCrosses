@@ -12,9 +12,17 @@
 <h1>{{titleMessage}}</h1>
 
 <h2>Player 1 : {{player1}}</h2>
-
+    <select ng-model="player1">
+        <option value="Human">Human</option>
+        <option value="Easy Computer">Easy Computer</option>
+        <option value="Overkill Computer">Overkill Computer</option>
+    </select>
 <h2>Player 2 : {{player2}}</h2>
-
+<select ng-model="player2">
+    <option value="Human">Human</option>
+    <option value="Easy Computer">Easy Computer</option>
+    <option value="Overkill Computer">Overkill Computer</option>
+</select>
 </body>
 
 </html>
