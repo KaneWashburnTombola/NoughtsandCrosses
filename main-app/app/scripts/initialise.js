@@ -7,5 +7,5 @@
             $scope.titleMessage = "Welcome to Noughts and Crosses";
             $scope.player1 = "";
             $scope.player2 = "";
-    });
+        });
 })();
