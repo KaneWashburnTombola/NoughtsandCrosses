@@ -10,7 +10,6 @@
 <body>
 <div ng-controller="TextContoller">
 <h1>{{titleMessage}}</h1>
-
 <h2>Player 1 : {{player1}}</h2>
     <select ng-model="player1">
         <option value="Human">Human</option>
@@ -24,6 +23,13 @@
     <option value="Overkill Computer">Overkill Computer</option>
 </select>
     <input type="button" value="Play!" ng-show="player2">
+    <h2>Rules</h2>
+    <p>The rules to Noughts and Crosses are very simple and here they are!</p>
+    <ul>
+        <li>Player 1 uses X's and Player 2 uses O's</li>
+        <li>Each player takes turns and places a mark in any square on the board by clicking it</li>
+        <li>The first player to get 3 of their marks in a row going vertically, horizontally or diagonally wins!</li>
+    </ul>
 </div>
 </body>
 
