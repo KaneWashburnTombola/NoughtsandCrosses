@@ -7,5 +7,11 @@
             $scope.titleMessage = "Welcome to Noughts and Crosses";
             $scope.player1 = "";
             $scope.player2 = "";
+            $scope.gameboard='000000000';
+            $scope.makeTurn=function(number){
+                for(var char in gameboard){
+                    
+                }
+            };
         });
 })();
