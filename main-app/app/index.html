@@ -34,19 +34,19 @@
     </div>
 <table ng-show="gameReady">
     <tr>
-        <td class="cell">0</td>
-        <td class="cell midColumn">1</td>
-        <td class="cell">2</td>
+        <td class="cell" ng-click="makeTurn(0)">0</td>
+        <td class="cell midColumn"ng-click="makeTurn(1)">1</td>
+        <td class="cell"ng-click="makeTurn(2)">2</td>
     </tr>
     <tr>
-        <td class="cell midRow">3</td>
-        <td class="cell midRow midColumn">4</td>
-        <td class="cell midRow">5</td>
+        <td class="cell midRow"ng-click="makeTurn(3)">3</td>
+        <td class="cell midRow midColumn"ng-click="makeTurn(4)">4</td>
+        <td class="cell midRow"ng-click="makeTurn(5)">5</td>
     </tr>
     <tr>
-        <td>6</td>
-        <td class="cell midColumn">7</td>
-        <td>8</td>
+        <td ng-click="makeTurn(6)">6</td>
+        <td class="cell midColumn"ng-click="makeTurn(7)">7</td>
+        <td ng-click="makeTurn(8)">8</td>
     </tr>
 </table>
     {{gameboard}}
