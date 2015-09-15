@@ -10,19 +10,19 @@
 <body>
 <div ng-controller="TextContoller">
 <h1>{{titleMessage}}</h1>
-<h2 ng-hide="gameReady">Player 1 : {{player1}}</h2>
-    <select ng-hide="gameReady" ng-model="player1">
+<h2 ng-hide="gameReady">Player 1 : {{playerOne}}</h2>
+    <select ng-hide="gameReady" ng-model="playerOne">
         <option value="Human">Human</option>
-        <option value="Easy Computer">Easy Computer</option>
-        <option value="Overkill Computer">Overkill Computer</option>
+        <option value="Random">Easy Computer</option>
+        <option value="Pre-Trained">Overkill Computer</option>
     </select>
-<h2 ng-hide="gameReady" ng-show="player1">Player 2 : {{player2}}</h2>
-<select ng-hide="gameReady" ng-model="player2" ng-show="player1">
+<h2 ng-hide="gameReady" ng-show="playerOne">Player 2 : {{playerTwo}}</h2>
+<select ng-hide="gameReady" ng-model="playerTwo" ng-show="playerOne">
     <option value="Human">Human</option>
-    <option value="Easy Computer">Easy Computer</option>
-    <option value="Overkill Computer">Overkill Computer</option>
+    <option value="Random">Easy Computer</option>
+    <option value="Pre-Trained">Overkill Computer</option>
 </select>
-    <input type="button" value="Play!" ng-show="player2" ng-click="gameReady = true">
+    <input type="button" value="Play!" ng-show="playerTwo" ng-click="startGame();gameReady=true">
     <div class="rules">
     <h2>Rules</h2>
     <p>The rules to Noughts and Crosses are very simple and here they are!</p>
@@ -34,22 +34,22 @@
     </div>
 <table ng-show="gameReady">
     <tr>
-        <td class="cell" ng-click="makeTurn(0)">0</td>
-        <td class="cell midColumn"ng-click="makeTurn(1)">1</td>
-        <td class="cell"ng-click="makeTurn(2)">2</td>
+        <td ng-click="makeTurn(0)"class="cell player{{gameBoard[0]}}"></td>
+        <td class="cell midColumn player{{gameBoard[1]}}"ng-click="makeTurn(1)"></td>
+        <td class="cell player{{gameBoard[2]}}"ng-click="makeTurn(2)"></td>
     </tr>
     <tr>
-        <td class="cell midRow"ng-click="makeTurn(3)">3</td>
-        <td class="cell midRow midColumn"ng-click="makeTurn(4)">4</td>
-        <td class="cell midRow"ng-click="makeTurn(5)">5</td>
+        <td class="cell midRow player{{gameBoard[3]}}"ng-click="makeTurn(3)"></td>
+        <td class="midRow midColumn player{{gameBoard[4]}}"ng-click="makeTurn(4)"></td>
+        <td class="cell midRow player{{gameBoard[5]}}"ng-click="makeTurn(5)"></td>
     </tr>
     <tr>
-        <td ng-click="makeTurn(6)">6</td>
-        <td class="cell midColumn"ng-click="makeTurn(7)">7</td>
-        <td ng-click="makeTurn(8)">8</td>
+        <td class="player{{gameBoard[6]}}"ng-click="makeTurn(6)"></td>
+        <td class="cell midColumn player{{gameBoard[7]}} "ng-click="makeTurn(7)"></td>
+        <td class="player{{gameBoard[8]}}"ng-click="makeTurn(8)"></td>
     </tr>
 </table>
-    {{gameboard}}
+    {{gameBoard}}
 </div>
 </body>
 </html>
