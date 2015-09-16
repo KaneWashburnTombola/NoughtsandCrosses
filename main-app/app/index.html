@@ -12,15 +12,15 @@
 <h1>{{titleMessage}}</h1>
 <h2 ng-hide="gameReady">Player 1 : {{playerOne}}</h2>
     <select ng-hide="gameReady" ng-model="playerOne">
-        <option value="Human">Human</option>
-        <option value="Random">Easy Computer</option>
-        <option value="Pre-Trained">Overkill Computer</option>
+        <option value="human">Human</option>
+        <option value="random">Easy Computer</option>
+        <option value="pre-trained">Overkill Computer</option>
     </select>
 <h2 ng-hide="gameReady" ng-show="playerOne">Player 2 : {{playerTwo}}</h2>
 <select ng-hide="gameReady" ng-model="playerTwo" ng-show="playerOne">
-    <option value="Human">Human</option>
-    <option value="Random">Easy Computer</option>
-    <option value="Pre-Trained">Overkill Computer</option>
+    <option value="human">Human</option>
+    <option value="random">Easy Computer</option>
+    <option value="pre-trained">Overkill Computer</option>
 </select>
     <input type="button" value="Play!" ng-show="playerTwo" ng-click="startGame()">
     <div class="rules">
