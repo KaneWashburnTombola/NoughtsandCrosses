@@ -32,6 +32,8 @@
         <li>The first player to get 3 of their marks in a row going vertically, horizontally or diagonally wins!</li>
     </ul>
     </div>
+</div>
+<div ng-controller="GameController">
 <table ng-show="gameReady">
     <tr>
         <td ng-click="makeTurn(0)"class="cell player{{gameBoard[0]}}"></td>
