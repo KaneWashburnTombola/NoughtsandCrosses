@@ -1,5 +1,5 @@
 (function () {
     'use strict';
-    angular.module('Tombola.setup',[]);
+    angular.module('Tombola.setup',['ui.router']);
 })();
 
