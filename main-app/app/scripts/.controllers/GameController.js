@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('Tombola.setup')
+    angular.module('Tombola.Gameboard')
         .controller('GameController',['$scope','HttpMakeMove',function($scope,httpMakeMove){
             $scope.makeTurn=function(number){
                 var currentPlayer='1';

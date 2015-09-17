@@ -25,8 +25,13 @@
                     spawn:false
                 },
                 html:{
-                    files:'main-app/app/index.html',
+                    files:'main-app/app/html/**/*.html',
                     tasks:'copy:html',
+                    spawn:false
+                },
+                index:{
+                    files:'main-app/app/index.html',
+                    tasks:'copy:index',
                     spawn:false
                 }
             }

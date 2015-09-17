@@ -16,8 +16,13 @@
         },
         html:{
             cwd:'',
-            src:['main-app/app/*.html'],
+            src:['main-app/app/html/**/*.html'],
             dest:'.build/',
+            expand:true
+        },
+        index:{
+            src:'main-app/app/index.html',
+            dest:'.build',
             expand:true
         },
         bower:{

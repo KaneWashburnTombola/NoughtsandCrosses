@@ -8,7 +8,7 @@
             src:'.build/main-app/app/css/main.css'
         },
         html:{
-            src:'.build/main-app/app/index.html'
+            src:['.build/main-app/app/index.html','.build/main/app/html/']
         }
     };
 

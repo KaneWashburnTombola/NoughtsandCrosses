@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('Tombola.setup')
+    angular.module('Tombola.MoveService')
         .service('HttpMakeMove',['$http','$q',function($http,$q){
             var me= this;
             me.newTurn=function(playerNumber,chosenSquare){

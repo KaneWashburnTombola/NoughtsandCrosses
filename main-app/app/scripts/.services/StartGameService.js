@@ -1,6 +1,7 @@
 (function () {
     'use strict';
-   angular.module('Tombola.setup')
+
+   angular.module('Tombola.SetupService')
        .service('HttpStartGame',['$http','$q',function($http,$q) {
            var me = this;
            me.newGame=function(player1Type, player2Type){

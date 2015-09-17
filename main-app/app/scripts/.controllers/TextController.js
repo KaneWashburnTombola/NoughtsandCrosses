@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('Tombola.setup')
+    angular.module('Tombola.Setup')
         .controller('TextContoller',['$scope','HttpStartGame',function($scope,httpStartGame){
             $scope.titleMessage = "Welcome to Noughts and Crosses";
             $scope.playerOne = "human";
