@@ -1,9 +1,8 @@
-<body>
     <table ng-show="gameReady">
         <tr>
-            <td ng-click="makeTurn(0)"class="cell player{{gameBoard[0]}}"></td>
-            <td class="cell midColumn player{{gameBoard[1]}}"ng-click="makeTurn(1)"></td>
-            <td class="cell player{{gameBoard[2]}}"ng-click="makeTurn(2)"></td>
+            <td ng-click="makeTurn(0)" class="player{{gameBoard[0]}} cell"></td>
+            <td ng-click="makeTurn(1)" class="player{{gameBoard[1]}} cell midColumn "></td>
+            <td ng-click="makeTurn(2)" class="player{{gameBoard[2]}} cell"></td>
         </tr>
         <tr>
             <td class="cell midRow player{{gameBoard[3]}}"ng-click="makeTurn(3)"></td>
@@ -16,4 +15,3 @@
             <td class="player{{gameBoard[8]}}"ng-click="makeTurn(8)"></td>
         </tr>
     </table>
-</body>

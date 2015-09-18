@@ -1,6 +1,5 @@
 (function () {
     'use strict';
-
    angular.module('Tombola.SetupService')
        .service('HttpStartGame',['$http','$q',function($http,$q) {
            var me = this;

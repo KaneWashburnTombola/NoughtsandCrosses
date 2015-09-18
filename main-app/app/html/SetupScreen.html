@@ -1,5 +1,5 @@
-<body>
-    <h1>{{titleMessage}}</h1>
+
+<h1>{{titleMessage}}</h1>
     <h2>Player 1 : {{playerOne}}</h2>
     <select ng-model="playerOne">
         <option value="human">Human</option>
@@ -12,7 +12,7 @@
         <option value="random">Easy Computer</option>
         <option value="pre-trained">Overkill Computer</option>
     </select>
-    <input type="button" value="Play!" ng-show="playerTwo" ng-click="startGame()" ui-sref="stateB">
+    <input type="button" value="Play!" ng-show="playerTwo" ng-click="startGame()">
     <div class="rules">
         <h2>Rules</h2>
         <p>The rules to Noughts and Crosses are very simple and here they are!</p>
@@ -22,4 +22,3 @@
             <li>The first player to get 3 of their marks in a row going vertically, horizontally or diagonally wins!</li>
         </ul>
     </div>
-</body>
