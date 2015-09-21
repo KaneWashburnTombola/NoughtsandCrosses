@@ -1,17 +1,19 @@
-    <table ng-show="gameReady">
+<div ng-controller="GameController">
+    <table>
         <tr>
             <td ng-click="makeTurn(0)" class="player{{gameBoard[0]}} cell"></td>
-            <td ng-click="makeTurn(1)" class="player{{gameBoard[1]}} cell midColumn "></td>
+            <td ng-click="makeTurn(1)" class="player{{gameBoard[1]}} cell midColumn"></td>
             <td ng-click="makeTurn(2)" class="player{{gameBoard[2]}} cell"></td>
         </tr>
         <tr>
-            <td class="cell midRow player{{gameBoard[3]}}"ng-click="makeTurn(3)"></td>
-            <td class="midRow midColumn player{{gameBoard[4]}}"ng-click="makeTurn(4)"></td>
-            <td class="cell midRow player{{gameBoard[5]}}"ng-click="makeTurn(5)"></td>
+            <td ng-click="makeTurn(3)" class="player{{gameBoard[3]}} cell midRow "></td>
+            <td ng-click="makeTurn(4)" class="player{{gameBoard[4]}} midRow midColumn"></td>
+            <td ng-click="makeTurn(5)" class="player{{gameBoard[5]}} cell midRow "></td>
         </tr>
         <tr>
-            <td class="player{{gameBoard[6]}}"ng-click="makeTurn(6)"></td>
-            <td class="cell midColumn player{{gameBoard[7]}} "ng-click="makeTurn(7)"></td>
-            <td class="player{{gameBoard[8]}}"ng-click="makeTurn(8)"></td>
+            <td ng-click="makeTurn(6)"class="player{{gameBoard[6]}}"></td>
+            <td ng-click="makeTurn(7)"class="player{{gameBoard[7]}} cell midColumn" ></td>
+            <td ng-click="makeTurn(8)"class="player{{gameBoard[8]}}"></td>
         </tr>
     </table>
+</div>
