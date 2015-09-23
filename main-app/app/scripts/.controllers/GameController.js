@@ -2,7 +2,7 @@
     'use strict';
     angular.module('Tombola.Gameboard')
         .controller('GameController',['$scope','HttpMakeMove','PlayerSwitcher',function($scope,httpMakeMove,playerSwitcher){
-            $scope.gameBoard='000000000';
+            $scope.gameBoard= playerSwitcher.gameBoard;
             var currentPlayer = playerSwitcher.currentPlayer;
             $scope.makeTurn=function(number){
                 if($scope.gameBoard[number]!=='0'){

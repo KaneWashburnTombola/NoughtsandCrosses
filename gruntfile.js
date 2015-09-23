@@ -4,6 +4,7 @@
     var lessTask = require('./.grunt/less-task');
     var javaTask = require('./.grunt/java-task');
     var cleanTask= require('./.grunt/clean-task');
+
     module.exports = function(grunt) {
         grunt.initConfig({
             pkg:grunt.file.readJSON('package.json'),
@@ -36,6 +37,7 @@
                 }
             }
         });
+        grunt.loadNpmTasks('grunt-express-server');
         grunt.loadNpmTasks('grunt-contrib-copy');
         grunt.loadNpmTasks('grunt-lesslint');
         grunt.loadNpmTasks('grunt-contrib-less');
@@ -45,6 +47,12 @@
         grunt.loadNpmTasks('grunt-contrib-watch');
         grunt.registerTask('lessFiles',['lesslint','clean:css','less']);
         grunt.registerTask('jsFiles',['jshint','clean:javascript','concat:concat']);
-        grunt.registerTask('default',['watch']);
+        grunt.registerTask('default',['server','watch']);
+        var port = 35001;
+        grunt.registerTask('server', 'Start a custom web server', function() {
+            var server = require('./.grunt/server-task');
+            server.listen(port);
+            grunt.log.writeln('Listening on port ' + port);
+        });
     };
 })();
