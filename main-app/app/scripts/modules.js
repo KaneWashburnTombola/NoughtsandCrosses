@@ -4,8 +4,9 @@
     angular.module('Tombola.MoveService',[]);
     angular.module('Tombola.Setup',[]);
     angular.module('Tombola.PlayerSwitcher',[]);
+    angular.module('Tombola.SquareDirective',[]);
     angular.module('Tombola.Gameboard',[]);
-    angular.module('Tombola.MainApp',["Tombola.SetupService","Tombola.PlayerSwitcher","Tombola.MoveService","Tombola.Setup","Tombola.Gameboard","ui.router"]);
+    angular.module('Tombola.MainApp',["Tombola.SetupService","Tombola.PlayerSwitcher","Tombola.MoveService","Tombola.Setup","Tombola.Gameboard","Tombola.SquareDirective","ui.router"]);
     angular.module('Tombola.MainApp')
         .config(function($stateProvider, $urlRouterProvider){
             $urlRouterProvider.otherwise("/lobby");

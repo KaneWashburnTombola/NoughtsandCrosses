@@ -16,7 +16,7 @@
             clean:cleanTask,
             watch:{
                 javascript: {
-                    files: ['main-app/app/scripts/**/*.js','main-app/app/scripts/.services/**/*.js','main-app/app/scripts/.controllers/**/*.js'],
+                    files: ['main-app/app/scripts/modules.js','main-app/app/scripts/services/**/*.js','main-app/app/scripts/directives/**/*.js','main-app/app/scripts/controllers/**/*.js'],
                     tasks:'jsFiles',
                     spawn:false
                 },
