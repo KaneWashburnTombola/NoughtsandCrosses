@@ -1,19 +1,19 @@
 <div ng-controller="GameController">
     <table>
         <tr>
-            <td ng-click="makeTurn(0)" class="player{{gameBoard[0]}} cell"></td>
-            <td ng-click="makeTurn(1)" class="player{{gameBoard[1]}} cell midColumn"></td>
-            <td ng-click="makeTurn(2)" class="player{{gameBoard[2]}} cell"></td>
+            <td><square square-number="0"></square></td>
+            <td class="midColumn"><square square-number="1"></square></td>
+            <td><square square-number="2"></square></td>
         </tr>
         <tr>
-            <td ng-click="makeTurn(3)" class="player{{gameBoard[3]}} cell midRow "></td>
-            <td ng-click="makeTurn(4)" class="player{{gameBoard[4]}} midRow midColumn"></td>
-            <td ng-click="makeTurn(5)" class="player{{gameBoard[5]}} cell midRow "></td>
+            <td class="midRow"><square square-number="3"></square></td>
+            <td class="midRow midColumn"><square square-number="4"></square></td>
+            <td class="midRow"><square square-number="5"></square></td>
         </tr>
         <tr>
-            <td ng-click="makeTurn(6)"class="player{{gameBoard[6]}}"></td>
-            <td ng-click="makeTurn(7)"class="player{{gameBoard[7]}} cell midColumn" ></td>
-            <td ng-click="makeTurn(8)"class="player{{gameBoard[8]}}"></td>
+            <td><square square-number="6"></square></td>
+            <td class="midColumn" ><square square-number="7"></square></td>
+            <td><square square-number="8"></square></td>
         </tr>
     </table>
 </div>

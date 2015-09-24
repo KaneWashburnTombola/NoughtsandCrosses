@@ -1,13 +1,11 @@
 (function () {
     'use strict';
     angular.module('Tombola.SquareDirective')
-        .directive('Square',function(){
+        .directive('square',function(){
             return {
                 restrict: 'E',
-                scope: {
-                    squareNumber: '@squareNumber'
-                },
-                templateUrl: function(element){
+                template: function(attr,element){
+                    console.log(attr);
                     return '<div ng-click="makeTurn('+element.squareNumber+')" class= "cell player{{gameBoard['+element.squareNumber+']}}"></div>';
                 }
             };
