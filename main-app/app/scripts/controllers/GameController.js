@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('Tombola.Gameboard')
-        .controller('GameController',['$scope','HttpMakeMove','PlayerSwitcher',function($scope,httpMakeMove,playerSwitcher){
+        .controller('GameController',['$scope','$state','HttpMakeMove','PlayerSwitcher',function($scope,$state,httpMakeMove,playerSwitcher){
             $scope.gameBoard= playerSwitcher.gameBoard;
             var currentPlayer = playerSwitcher.currentPlayer;
             $scope.makeTurn=function(number){
@@ -12,7 +12,7 @@
                     function(data){
                         $scope.gameBoard=data.gameboard;
                         if(data.outcome==='Win'){
-                            //TODO win animation thingy
+                            $state.go('win');
                         }
                     },
                     function(data){

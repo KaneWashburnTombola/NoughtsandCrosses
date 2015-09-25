@@ -27,9 +27,14 @@
         },
         bower:{
             cwd:'',
-            src:['bower_components/**/*.*'],
+            src:'bower_components/**/*.*',
             dest:'.build/main-app/app/thirdparty/',
             expand:true
+        },
+        animation:{
+            src:'main-app/app/animation/animate.css',
+            dest:'.build/main-app/app/css/animate.css',
+            expand:false
         }
     };
 })();

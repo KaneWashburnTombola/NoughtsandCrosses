@@ -18,6 +18,10 @@
                 .state('playing',{
                     url:"/playing",
                     templateUrl:"html/Gameboard.html"
+                })
+                .state('win',{
+                    url:'/win',
+                    templateUrl:'../html/Win.html'
                 });
         });
 })();
