@@ -1,14 +1,14 @@
 (function () {
     'use strict';
     angular.module('Tombola.Gameboard')
-        .controller('GameController',['$scope','HttpMakeMove','PlayerSwitcher',function($scope,httpMakeMove,playerSwitcher){
+        .controller('GameController',['$scope','ApiProxy','PlayerSwitcher',function($scope,apiProxy,playerSwitcher){
             $scope.gameBoard= playerSwitcher.gameBoard;
             var currentPlayer = playerSwitcher.currentPlayer;
             $scope.makeTurn=function(number){
                 if($scope.gameBoard[number]!=='0'){
                     return;
                 }
-                httpMakeMove.newTurn(currentPlayer,number).then(
+                apiProxy.newTurn(currentPlayer,number).then(
                     function(data){
                         $scope.gameBoard=data.gameboard;
                         if(data.outcome==='Win'){

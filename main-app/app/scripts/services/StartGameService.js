@@ -1,7 +1,7 @@
 (function () {
     'use strict';
    angular.module('Tombola.SetupService')
-       .service('HttpStartGame',['$http','$q',function($http,$q) {
+       .service('ApiProxy',['$http','$q',function($http,$q) {
            var me = this;
            me.newGame=function(player1Type, player2Type){
                var defered= $q.defer();
@@ -14,9 +14,6 @@
                    });
                return defered.promise;
            };
-       }])
-        .service('HttpMakeMove',['$http','$q',function($http,$q){
-            var me= this;
             me.newTurn=function(playerNumber,chosenSquare){
                 var defered= $q.defer();
                 $http.post('http://eutaveg-01.tombola.emea:35000/api/v1.0/makemove',{"playerNumber":playerNumber,"chosenSquare":chosenSquare},{"withCredentials":"true"})
