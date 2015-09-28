@@ -9,9 +9,9 @@
                     return;
                 }
                 apiProxy.newTurn(currentPlayer,number).then(
-                    function(data){
-                        $scope.gameBoard=data.gameboard;
-                        if(data.outcome==='Win'){
+                    function(response){
+                        $scope.gameBoard=response.data.gameboard;
+                        if(response.data.outcome==='Win'){
                             console.log('everyday im winning!');
                             //TODO win animation thingy
                         }
