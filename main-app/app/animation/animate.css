@@ -1164,9 +1164,9 @@
 }
 
 .fadeIn {
-    display: inline-block;
-    margin-left: 750px;
-    margin-top: 200px;
+
+    margin-left: 50%;
+    margin-top: 10%;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }

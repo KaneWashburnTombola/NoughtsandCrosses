@@ -7,9 +7,11 @@
     <title></title>
 </head>
 <body>
-<img src="http://media.giphy.com/media/14qxpCwwGaoQPS/giphy.gif">
-<h1 class="animated fadeIn" >Finish Him!</h1>
-<img src="images/wolverine.gif">
-
+<img ng-click="subReady = true" class="FMtitle" src="images/finishTitle.gif">
+<img ng-hide="subReady" class="subZero" src="images/subZeroReady.gif">
+<img ng-show="subReady" class="subZero" src="images/subzero.gif">
+<img class="wolverine" src="images/wolverine.gif">
+</div>
 </body>
 </html>
+
