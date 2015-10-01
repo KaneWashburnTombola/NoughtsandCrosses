@@ -13,6 +13,7 @@
                         $scope.gameBoard=data.gameboard;
                         if(data.outcome==='Win'){
                             $state.go('win');
+
                         }
                     },
                     function(data){

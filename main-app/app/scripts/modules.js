@@ -22,6 +22,14 @@
                 .state('win',{
                     url:'/win',
                     templateUrl:'../html/Win.html'
+                })
+                .state('player1win',{
+                    url:'/player1win',
+                    templateUrl:'html/player1Win.html'
+                })
+                .state('player2win',{
+                    url:'/player2win',
+                    templateUrl:'html/player2Win.html'
                 });
         });
 })();
