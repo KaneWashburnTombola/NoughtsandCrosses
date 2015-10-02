@@ -1,7 +1,8 @@
 (function () {
     'use strict';
     angular.module('Tombola.Win')
-        .controller('WinController',['$state','WinDecider','$scope',function($scope,$state,winDecider){
+        .controller('WinController',['$scope','$state','WinDecider',function($scope,$state,winDecider){
+
             $scope.showWinner=function(){
                 console.log(winDecider.winner);
                 if(winDecider.winner===1){

@@ -23,13 +23,13 @@
                 })
                 .state('win',{
                     url:'/win',
-                    templateUrl:'../html/Win.html'
+                    templateUrl:'html/Win.html'
                 })
-                .state('player1win',{
+                .state('player1Win',{
                     url:'/player1win',
                     templateUrl:'html/player1Win.html'
                 })
-                .state('player2win',{
+                .state('player2Win',{
                     url:'/player2win',
                     templateUrl:'html/player2Win.html'
                 });
