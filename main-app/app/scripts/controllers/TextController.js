@@ -16,5 +16,8 @@
                     function(){
                     });
             };
+            $scope.lobbyReturn=function(){
+                $state.go('lobby');
+            };
         }]);
 })();
