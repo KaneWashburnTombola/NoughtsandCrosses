@@ -1,24 +1,23 @@
-@background-color:#D4CDB1;
-@text-color:#000000;
+@background-color:#000000;
+@text-color:#ffffff;
 @background-image: url("../images/testnoughtsandcrosses.png");
 
 body{
   background-color: @background-color;
   display: inline-block;
+  color: @text-color;
 }
 
 .midRow{
   border-top:1px solid @text-color;
   border-bottom:1px solid @text-color;
 }
-
 .player1, .player2{
   background-image: @background-image;
 }
 .cell{
   width:180px;
   height:180px;
-  background-position: 0;
 }
 .midColumn {
    border-left:1px solid @text-color;
@@ -33,4 +32,25 @@ table{
 }
 .player2{
   background-position: -1px;
+}
+.subZero{
+  height: 300px;
+}
+.wolverine{
+  height: 300px;
+  width: 250px;
+}
+.block{
+  display: inline-block;
+  width: auto;
+  margin-top: 10%;
+  margin-left: 30%;
+}
+.FMtitle{
+  margin-top: 10%;
+  margin-left:800px;
+}
+.wolverineWin{
+  height:500px;
+  margin-left: 80%;
 }
