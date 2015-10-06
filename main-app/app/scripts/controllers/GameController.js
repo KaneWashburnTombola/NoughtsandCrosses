@@ -15,6 +15,9 @@
                             winDecider.theWinner(data.winner);
                             $state.go('win');
                         }
+                        if(data.outcome==='Draw'){
+                            $state.go('draw');
+                        }
                     },
                     function(data){
                         console.log("makeMove failed"+data);
