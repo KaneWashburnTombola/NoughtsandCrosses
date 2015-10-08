@@ -12,12 +12,10 @@
                     function(response){
                         $scope.gameBoard=response.data.gameboard;
                         if(response.data.outcome==='Win'){
-                            console.log('everyday im winning!');
                             //TODO win animation thingy
                         }
                     },
                     function(data){
-                        console.log("makeMove failed"+data);
                     });
                 playerSwitcher.playerSwap();
                 currentPlayer = playerSwitcher.currentPlayer;
