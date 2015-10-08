@@ -15,13 +15,10 @@
                return defered.promise;
            };
            me.newGame=function(player1Type, player2Type){
-               var data= {"player1": player1Type,"player2": player2Type};
-               return apiCall('newGame',data);
+               return apiCall('newGame',{"player1": player1Type,"player2": player2Type});
            };
             me.newTurn=function(playerNumber,chosenSquare){
-                var data={"playerNumber":playerNumber,"chosenSquare":chosenSquare};
-                return apiCall('makeMove',data);
-
+                return apiCall('makeMove',{"playerNumber":playerNumber,"chosenSquare":chosenSquare});
             };
         }]);
 })();
