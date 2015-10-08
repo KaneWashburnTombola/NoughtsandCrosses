@@ -11,7 +11,7 @@
         it('Replaces the element with the appropriate content', function() {
             var element = $compile('<square></square>')($rootScope);
             $rootScope.$digest();
-            expect()
+            expect(element.html()).toContain('ng-click="makeTurn('+element.squareNumber+')" class= "cell player{{gameBoard['+element.squareNumber+']}}"')
         });
     });
 })();
