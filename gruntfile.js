@@ -34,6 +34,11 @@
                     files:'main-app/app/index.html',
                     tasks:'copy:index',
                     spawn:false
+                },
+                animation:{
+                    files:'main-app/app/animation/animate.css',
+                    tasks:'copy:animation',
+                    spawn:false
                 }
             }
         });
@@ -47,7 +52,7 @@
         grunt.loadNpmTasks('grunt-contrib-watch');
         grunt.registerTask('lessFiles',['lesslint','clean:css','less']);
         grunt.registerTask('jsFiles',['jshint','clean:javascript','concat:concat']);
-        grunt.registerTask('default',['server','watch']);
+        grunt.registerTask('default',['copy','jsFiles','lessFiles','server','watch']);
         var port = 35001;
         grunt.registerTask('server', 'Start a custom web server', function() {
             var server = require('./.grunt/server-task');
