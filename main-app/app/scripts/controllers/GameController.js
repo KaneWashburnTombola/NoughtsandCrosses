@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('Tombola.Gameboard')
-        .controller('GameController',['$scope','ApiProxy','PlayerSwitcher','WinDecider',function($scope,apiProxy,playerSwitcher,winDecider){
+        .controller('GameController',['$scope','$state','ApiProxy','PlayerSwitcher','WinDecider',function($scope,$state,apiProxy,playerSwitcher,winDecider){
             $scope.gameBoard= playerSwitcher.gameBoard;
             var currentPlayer = playerSwitcher.currentPlayer;
             $scope.makeTurn=function(number){
@@ -12,11 +12,11 @@
                     function(response){
                         $scope.gameBoard=response.data.gameboard;
                         if(response.data.outcome==='Win'){
-                            winDecider.theWinner(data.winner);
+                            winDecider.theWinner(response.data.winner);
                             $state.go('win');
                         }
                     },
-                    function(data){
+                    function(response){
                     });
                 playerSwitcher.playerSwap();
                 currentPlayer = playerSwitcher.currentPlayer;

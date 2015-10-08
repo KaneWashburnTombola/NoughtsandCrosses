@@ -2,12 +2,12 @@
     'use strict';
     angular.module('Tombola.SetupService',[]);
     angular.module('Tombola.WinDecider',[]);
-    angular.module('Tombola.Setup',[]);
     angular.module('Tombola.PlayerSwitcher',[]);
+    angular.module('Tombola.Setup',[]);
     angular.module('Tombola.SquareDirective',[]);
     angular.module('Tombola.Gameboard',[]);
     angular.module('Tombola.Win',[]);
-    angular.module('Tombola.MainApp',['Tombola.SetupService','Tombola.PlayerSwitcher','Tombola.WinDecider','Tombola.Setup','Tombola.SquareDirective','Tombola.Gameboard','Tombola.Win','ui.router']);
+    angular.module('Tombola.MainApp',['Tombola.SetupService','Tombola.PlayerSwitcher','Tombola.WinDecider','Tombola.SquareDirective','Tombola.Setup','Tombola.Gameboard','Tombola.Win','ui.router']);
     angular.module('Tombola.MainApp')
         .config(function($stateProvider, $urlRouterProvider){
             $urlRouterProvider.otherwise("/lobby");
