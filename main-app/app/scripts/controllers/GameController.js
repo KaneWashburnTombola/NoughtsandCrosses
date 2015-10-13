@@ -15,6 +15,9 @@
                             winDecider.theWinner(response.data.winner);
                             $state.go('win');
                         }
+                        if(data.outcome==='Draw'){
+                            $state.go('draw');
+                        }
                     },
                     function(response){
                     });
