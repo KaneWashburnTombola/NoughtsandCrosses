@@ -12,7 +12,6 @@
                 else{
                     me.winner=2;
                 }
-                console.log(me.winner);
             };
         });
 })();
