@@ -31,6 +31,10 @@
                 .state('player2Win',{
                     url:'/player2win',
                     templateUrl:'html/player2Win.html'
+                })
+                .state('draw',{
+                    url:'/draw',
+                    templateUrl:'html/Draw.html'
                 });
         });
 })();
