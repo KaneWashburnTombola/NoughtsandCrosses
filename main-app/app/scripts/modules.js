@@ -14,23 +14,27 @@
             $stateProvider
                 .state('lobby',{
                     url:"/lobby",
-                    templateUrl:"html/SetupScreen.html"
+                    templateUrl:"../html/setup-screen.html"
                 })
                 .state('playing',{
                     url:"/playing",
-                    templateUrl:"html/Gameboard.html"
+                    templateUrl:"../html/gameboard.html"
                 })
                 .state('win',{
                     url:'/win',
-                    templateUrl:'html/Win.html'
+                    templateUrl:'../html/win.html'
                 })
                 .state('player1Win',{
                     url:'/player1win',
-                    templateUrl:'html/player1Win.html'
+                    templateUrl:'../html/player1-win.html'
                 })
                 .state('player2Win',{
                     url:'/player2win',
-                    templateUrl:'html/player2Win.html'
+                    templateUrl:'../html/player2-win.html'
+                })
+                .state('draw',{
+                    url:'/draw',
+                    templateUrl:'../html/draw.html'
                 });
         });
 })();
