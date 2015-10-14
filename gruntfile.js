@@ -17,6 +17,7 @@
             karma:{
                 unit:{
                     options:{
+                        logLevel:'WARN',
                         frameworks:['mocha','chai','chai-sinon'],
                         port:9876,
                         singleRun:true,
@@ -28,8 +29,7 @@
                             'main-app/app/scripts/modules.js',
                             'main-app/app/scripts/**/*.js',
                             'main-app/app/testing/**/*.js'
-                        ],
-                        logLevel:'WARN'
+                        ]
                     }
                 }
             },
@@ -76,7 +76,7 @@
         grunt.loadNpmTasks('grunt-karma');
         grunt.registerTask('lessFiles',['lesslint','clean:css','less']);
         grunt.registerTask('jsFiles',['jshint','clean:javascript','concat:concat']);
-        grunt.registerTask('default',['copy','jsFiles','lessFiles','server','karma','watch']);
+        grunt.registerTask('default',['lessFiles','karma','jsFiles','server','copy','watch']);
         var port = 35002;
         grunt.registerTask('server', 'Start a custom web server', function() {
             var server = require('./.grunt/server-task');

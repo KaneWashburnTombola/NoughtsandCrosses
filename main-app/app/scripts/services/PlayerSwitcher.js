@@ -6,7 +6,6 @@
             me.playerOne = '';
             me.playerTwo = '';
             me.gameBoard = '';
-            me.currentPlayer = 0;
             me.playerSwitch=function(player1Type,player2Type,gameBoard){
                 me.playerOne = player1Type;
                 me.playerTwo = player2Type;
