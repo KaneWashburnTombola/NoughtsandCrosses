@@ -23,7 +23,7 @@ describe('Player Switch Service',function(){
         playerSwitcher.gameBoard.should.equal('000000000');
     });
     it('sets currentPlayer',function(){
-        playerSwitcher.playerSwitch('elephant','human','000000000');
+        playerSwitcher.playerSwitch('anything','human','000000000');
         if(playerSwitcher.playerOne !== 'human' && playerSwitcher.playerTwo === 'human'){
             playerSwitcher.currentPlayer.should.equal(2);
         }
@@ -32,14 +32,15 @@ describe('Player Switch Service',function(){
         }
     });
     it('changes currentPlayer',function(){
+        playerSwitcher.playerOne='human';
+        playerSwitcher.playerTwo='human';
+        playerSwitcher.currentPlayer=1;
         playerSwitcher.playerSwap();
-        if(playerSwitcher.playerOne === 'human' && playerSwitcher.playerTwo=== 'human'){
-            if(playerSwitcher.currentPlayer ===1){
-                playerSwitcher.currentPlayer.should.equal('orange');
-            }
-            else{
-                playerSwitcher.currentPlayer.should.equal('elephant');
-            }
+        if(playerSwitcher.playerOne === 'human' && playerSwitcher.playerTwo=== 'human') {
+            playerSwitcher.currentPlayer.should.equal(2);
+        }
+        else{
+            playerSwitcher.currentPlayer.should.equal(1);
         }
     });
 });
