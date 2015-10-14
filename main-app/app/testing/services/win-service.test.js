@@ -1,16 +1,16 @@
 describe('Does the win service direct to the correct state',function(){
-    var winService;
+    var winDecider;
     beforeEach(function(){
         module('Tombola.WinDecider');
         inject(function($injector){
-            winService=$injector.get('WinDecider');
+            winDecider=$injector.get('WinDecider');
         });
     });
     it('initialises winner to 0',function(){
-        winService.winner.should.equal(0);
+        winDecider.winner.should.equal(0);
     });
     it('changes winner according to number received',function(){
-        winService.theWinner('1');
-        winService.winner.should.equal(1);
+        winDecider.theWinner('1');
+        winDecider.winner.should.equal(1);
     });
 });
