@@ -14,6 +14,25 @@
             jshint:javaTask,
             concat:javaTask,
             clean:cleanTask,
+            karma:{
+                unit:{
+                    options:{
+                        logLevel:'WARN',
+                        frameworks:['mocha','chai','chai-sinon'],
+                        port:9876,
+                        singleRun:true,
+                        browsers:['PhantomJS'],
+                        files: [
+                            'bower_components/angular/angular.js',
+                            'bower_components/angular-mocks/angular-mocks.js',
+                            'bower_components/angular-ui-router/release/angular-ui-router.js',
+                            'main-app/app/scripts/modules.js',
+                            'main-app/app/scripts/**/*.js',
+                            'main-app/app/testing/**/*.js'
+                        ]
+                    }
+                }
+            },
             watch:{
                 javascript: {
                     files: ['main-app/app/scripts/modules.js','main-app/app/scripts/services/**/*.js','main-app/app/scripts/directives/**/*.js','main-app/app/scripts/controllers/**/*.js'],
@@ -39,6 +58,10 @@
                     files:'main-app/app/animation/animate.css',
                     tasks:'copy:animation',
                     spawn:false
+                },
+                karma:{
+                    files:'main-app/app/testing/**/*.js',
+                    tasks:['karma']
                 }
             }
         });
@@ -50,9 +73,10 @@
         grunt.loadNpmTasks('grunt-contrib-concat');
         grunt.loadNpmTasks('grunt-contrib-clean');
         grunt.loadNpmTasks('grunt-contrib-watch');
+        grunt.loadNpmTasks('grunt-karma');
         grunt.registerTask('lessFiles',['lesslint','clean:css','less']);
         grunt.registerTask('jsFiles',['jshint','clean:javascript','concat:concat']);
-        grunt.registerTask('default',['copy','jsFiles','lessFiles','server','watch']);
+        grunt.registerTask('default',['lessFiles','karma','jsFiles','server','copy','watch']);
         var port = 35002;
         grunt.registerTask('server', 'Start a custom web server', function() {
             var server = require('./.grunt/server-task');

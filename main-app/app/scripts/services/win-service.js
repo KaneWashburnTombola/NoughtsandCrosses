@@ -1,6 +1,5 @@
 (function () {
     'use strict';
-
     angular.module('Tombola.WinDecider')
         .service('WinDecider',function(){
             var me = this;
