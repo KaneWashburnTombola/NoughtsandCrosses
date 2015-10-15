@@ -1,14 +1,21 @@
 describe('Unit testing squares',function(){
-    var $compile,
-        $rootScope;
-    beforeEach(module('Tombola.SquareDirective'));
-    beforeEach(inject(function($compile, $rootScope){
-        compile = $compile;
-        scope = $rootScope.$new();
-    }));
-    it('Replaces the element with the appropriate content', function() {
-        var element = $compile('<square></square>')($rootScope);
-        expect(element.html()).toContain('ng-click="makeTurn('+element.squareNumber+')" class= "cell player{{gameBoard['+element.squareNumber+']}}"');
-        $rootScope.$digest();
+    var compile;
+    var scope;
+    var element;
+    var squareNumber = 5;
+      beforeEach(function(){
+        module('Tombola.SquareDirective');
+        inject(function($injector){
+            element = angular.element('<div ng-click="makeTurn('+squareNumber+')" class= "cell player{{gameBoard['+squareNumber+']}}"></div>');
+            compile = $injector.get('$compile');
+            scope = $injector.get('$rootScope').$new();
+        });
+          compile(element)(scope);
+          scope.$digest();
+    });
+
+    it('checks it sets up element', function() {
+        element.attr('ng-click').should.equal('makeTurn(5)');
+        element.attr('class').should.equal('cell player');
     });
 });
