@@ -3,6 +3,11 @@ describe('Unit testing squares',function(){
     var scope;
     var element;
     var squareNumber = 4;
+    beforeEach(function(){
+        provide(function($provide){
+
+        });
+    });
       beforeEach(function(){
         module('Tombola.SquareDirective');
         inject(function($injector){
