@@ -6,12 +6,13 @@ describe('TextController',function(){
         module('Tombola.Setup');
         module(function($provide){
             $provide.service('ApiProxy',mocks.ApiProxy);
+            $provide.service('PlayerSwitcher',mocks.PlayerSwitcher);
         });
         inject(function(_$controller_){
         controller= _$controller_;
         });
         sandbox = sinon.sandbox.create();
-        ApiProxy = sinon.mock(mocks.ApiProxy);
+        ApiProxy = sinon.mock(mocks.PlayerSwitcher);
     });
     afterEach(function() {
         ApiProxy.verify();
