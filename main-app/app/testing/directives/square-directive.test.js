@@ -3,13 +3,12 @@ describe('Unit testing squares',function(){
     var scope;
     var element;
     var squareNumber = 4;
-    beforeEach(function(){
-        provide(function($provide){
-
-        });
-    });
+    var sandbox;
       beforeEach(function(){
         module('Tombola.SquareDirective');
+          module(function($provide){
+              $provide
+          });
         inject(function($injector){
             element = angular.element('<div ng-click="makeTurn('+squareNumber+')" class= "cell player{{gameBoard['+squareNumber+']}}"></div>');
             compile = $injector.get('$compile');
