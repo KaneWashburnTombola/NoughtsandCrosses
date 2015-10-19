@@ -4,10 +4,10 @@ describe('Api Proxy Calls',function(){
     var $q;
    beforeEach(function(){
        module('Tombola.SetupService');
-       inject(function($injector){
-           $http = $injector.get('$httpBackend');
-           apiProxy=$injector.get('ApiProxy');
-       });
+       inject(['$httpBackend','ApiProxy',function($httpBackend,_apiProxy_){
+           $http = $httpBackend;
+           apiProxy=_apiProxy_;
+       }]);
    });
     it('newGame should respond with correct json object',function(){
         var responseItem ={'outcome':'Continue','gameboard':'000000000','winner':0};
