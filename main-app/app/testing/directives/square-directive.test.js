@@ -4,7 +4,7 @@ describe('Unit testing squares',function(){
     var element;
     var squareNumber = 4;
     var sandbox;
-    var ApiProxyStub;
+    var ApiProxySpy;
       beforeEach(function(){
         module('Tombola.SquareDirective');
           module(function($provide){
@@ -18,15 +18,15 @@ describe('Unit testing squares',function(){
           compile(element)(scope);
           scope.$digest();
           sandbox = sinon.sandbox.create();
-          ApiProxyStub = sinon.sandbox.stub(mocks.ApiProxy,'newTurn');
+          ApiProxySpy = sinon.sandbox.spy(mocks.ApiProxy,'newTurn');
     });
     it('checks it sets up element', function() {
         element.attr('ng-click').should.equal('makeTurn(4)');
-        ApiProxyStub.newTurn('1','4');
+        ApiProxySpy.newTurn('1','4');
         element.attr('class').should.equal('cell player1');
     });
     afterEach(function(){
-       ApiProxyStub.verify();
+       ApiProxySpy.verify();
         sandbox.restore();
     });
 });

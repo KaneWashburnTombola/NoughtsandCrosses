@@ -16,5 +16,8 @@ var mocks={
     WinDecider:{
         winner:0,
         theWinner:function(){}
+    },
+    $state:{
+        $current:'lobby'
     }
 };
