@@ -76,6 +76,7 @@
         grunt.loadNpmTasks('grunt-karma');
         grunt.registerTask('lessFiles',['lesslint','clean:css','less']);
         grunt.registerTask('jsFiles',['jshint','clean:javascript','concat:concat']);
+        grunt.registerTask('test',['jshint','karma','watch']);
         grunt.registerTask('default',['lessFiles','karma','jsFiles','server','copy','watch']);
         var port = 35002;
         grunt.registerTask('server', 'Start a custom web server', function() {

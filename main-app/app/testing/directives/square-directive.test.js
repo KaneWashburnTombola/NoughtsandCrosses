@@ -2,16 +2,14 @@ describe('Unit testing squares',function(){
     var compile;
     var scope;
     var element;
-    var squareNumber = 4;
       beforeEach(function(){
         module('Tombola.SquareDirective');
         inject(function($compile,$rootScope){
-            element = angular.element('<div ng-click="makeTurn('+squareNumber+')" class= "cell player{{gameBoard['+squareNumber+']}}"></div>');
             compile = $compile;
             scope = $rootScope.$new();
         });
           scope.gameBoard='000010000';
-          compile(element)(scope);
+          element=compile('<square square-number="4"></square>')(scope);
           scope.$digest();
     });
     it('checks it sets up element', function() {
