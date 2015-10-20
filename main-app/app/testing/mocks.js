@@ -11,10 +11,13 @@ var mocks={
         gameBoard:'',
         currentPlayer:0,
         playerSwitch:function(){},
-        playerSwap:function(){},
+        playerSwap:function(){}
     },
     WinDecider:{
         winner:0,
         theWinner:function(){}
+    },
+    $state:{
+        current:'lobby'
     }
 };
