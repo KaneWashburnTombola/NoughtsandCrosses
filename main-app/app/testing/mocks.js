@@ -18,6 +18,7 @@ var mocks={
         theWinner:function(){}
     },
     $state:{
-        current:'lobby'
+        current:'lobby',
+        go:function(){}
     }
 };

@@ -4,14 +4,18 @@ describe('TextController',function(){
     var PlayerSwitcher;
     var controller;
     var scope;
+    var q;
+    var deferred;
     beforeEach(function() {
         module('Tombola.Setup');
         module(function($provide){
             $provide.service('ApiProxy',mocks.ApiProxy);
             $provide.service('PlayerSwitcher',mocks.PlayerSwitcher);
         });
-        inject(function($rootScope,$controller){
+        inject(function($rootScope,$controller,$q){
             scope=$rootScope.$new();
+            q=$q;
+            deferred=$q.defer();
             controller= $controller('TextController',{
                 $scope:scope,
                 $state:mocks.$state,
@@ -29,9 +33,12 @@ describe('TextController',function(){
             scope.playerTwo.should.equal('human');
         });
     it('should make newGame call to API and then initialise game state',function(){
-        scope.playerOne='human';
-        scope.playerTwo='human';
-        ApiProxy=sinon.sandbox.stub().returns({'outcome':'Continue','gameboard':'000000000','winner':0});
-        scope.startGame(ApiProxy);
+        ApiProxy=sinon.sandbox.stub(mocks.ApiProxy,'newGame',function(){
+            return deferred.promise;
+        });
+        scope.startGame();
+        deferred.resolve({data:{gameboard:'000000000'}});
+        scope.$apply();
+        //scope.startGame.gameboard.should.equal('000000000');
     });
 });
