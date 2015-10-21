@@ -1,36 +1,39 @@
 describe('Testing if the win controller sends player to correct state',function(){
-    var scope;
-    var sandbox;
-    var controller;
-    var WinDecider;
-    var stateSpy;
+    var scope,
+        sandbox,
+        controller,
+        stateSpy;
+
     beforeEach(function(){
-       module('Tombola.Win');
-        module(function($provide){
-            $provide.service('WinDecider',mocks.WinDecider);
-        });
-        inject(function($rootScope,$controller){
-            scope=$rootScope.$new();
-            controller= $controller('WinController',{
+        module('Tombola.Win');
+
+        inject(function($rootScope, $controller){
+
+            scope = $rootScope.$new(),
+            controller = $controller('WinController',{
                 $scope:scope,
                 $state:mocks.$state,
                 WinDecider:mocks.WinDecider
             });
         });
+
         sandbox=sinon.sandbox.create();
+        stateSpy = sinon.sandbox.spy(mocks.$state,'go');
     });
-    afterEach(function(){
-        sandbox.restore();
-    });
+
     it('sends player to appropriate state',function() {
-        stateSpy = sandbox.spy(mocks.$state,'go');
+
         scope.showWinner();
         if (mocks.WinDecider.winner === 1) {
-            stateSpy.should.have.been.calledOnce;
-            stateSpy.should.have.been.calledWithExactly('player1Win');
+            stateSpy.should.have.been.calledOnce
+                .calledWithExactly('player1Win');
         }
         else {
             stateSpy.should.have.been.calledOnce.calledWithExactly('player2Win');
         }
+    });
+
+    afterEach(function(){
+        sandbox.restore();
     });
 });

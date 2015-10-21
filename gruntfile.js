@@ -18,7 +18,8 @@
                 unit:{
                     options:{
                         logLevel:'WARN',
-                        frameworks:['mocha','chai','chai-sinon'],
+                        frameworks:['mocha','chai','sinon-chai'],
+                        reporters: ['nyan'],
                         port:9876,
                         singleRun:true,
                         browsers:['PhantomJS'],
