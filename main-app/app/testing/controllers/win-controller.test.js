@@ -3,6 +3,7 @@ describe('Testing if the win controller sends player to correct state',function(
     var sandbox;
     var controller;
     var WinDecider;
+    var stateSpy;
     beforeEach(function(){
        module('Tombola.Win');
         module(function($provide){
@@ -18,10 +19,18 @@ describe('Testing if the win controller sends player to correct state',function(
         });
         sandbox=sinon.sandbox.create();
     });
-    it('sends player to appropriate state',function(){
-        //WinDecider.winner=1;
-        var stateStub=sinon.sandbox.stub(mocks.$state,'go');
+    afterEach(function(){
+        sandbox.restore();
+    });
+    it('sends player to appropriate state',function() {
+        stateSpy = sandbox.spy(mocks.$state,'go');
         scope.showWinner();
-
+        if (mocks.WinDecider.winner === 1) {
+            stateSpy.should.have.been.calledOnce;
+            stateSpy.should.have.been.calledWithExactly('player1Win');
+        }
+        else {
+            stateSpy.should.have.been.calledOnce.calledWithExactly('player2Win');
+        }
     });
 });
