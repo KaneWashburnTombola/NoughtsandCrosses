@@ -36,9 +36,12 @@ describe('TextController',function(){
         ApiProxy=sinon.sandbox.stub(mocks.ApiProxy,'newGame',function(){
             return deferred.promise;
         });
+        PlayerSwitcher=sandbox.spy(mocks.PlayerSwitcher,'playerSwitch');
+        $state=sandbox.spy(mocks.$state,'go');
         scope.startGame();
         deferred.resolve({data:{gameboard:'000000000'}});
-        scope.$apply();
-        //scope.startGame.gameboard.should.equal('000000000');
+        scope.$digest();
+        PlayerSwitcher.should.have.been.calledOnce.calledWithExactly(scope.playerOne,scope.playerTwo,'000000000');
+
     });
 });
