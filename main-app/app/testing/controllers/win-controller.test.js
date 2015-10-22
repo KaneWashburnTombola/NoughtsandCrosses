@@ -29,7 +29,8 @@ describe('Testing if the win controller sends player to correct state',function(
                 .calledWithExactly('player1Win');
         }
         else {
-            stateSpy.should.have.been.calledOnce.calledWithExactly('player2Win');
+            stateSpy.should.have.been.calledOnce
+                .calledWithExactly('player2Win');
         }
     });
 
