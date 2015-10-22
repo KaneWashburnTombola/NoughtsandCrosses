@@ -1,7 +1,7 @@
 describe('Unit testing squares',function(){
-    var compile;
-    var scope;
-    var element;
+    var compile,
+        scope,
+        element;
       beforeEach(function(){
         module('Tombola.SquareDirective');
         inject(function($compile,$rootScope){
