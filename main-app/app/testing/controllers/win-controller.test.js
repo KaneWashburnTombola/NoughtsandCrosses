@@ -8,8 +8,7 @@ describe('Testing if the win controller sends player to correct state',function(
         module('Tombola.Win');
 
         inject(function($rootScope, $controller){
-
-            scope = $rootScope.$new(),
+            scope = $rootScope.$new();
             controller = $controller('WinController',{
                 $scope:scope,
                 $state:mocks.$state,
