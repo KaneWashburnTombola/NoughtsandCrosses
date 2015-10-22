@@ -1,4 +1,3 @@
-'use strict';
 var mocks={
     ApiProxy:{
         apiCall:function(){},
@@ -14,7 +13,7 @@ var mocks={
         playerSwap:function(){}
     },
     WinDecider:{
-        winner:0,
+        winner:1,
         theWinner:function(){}
     },
     $state:{
