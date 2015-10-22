@@ -2,9 +2,9 @@ describe('Does the win service direct to the correct state',function(){
     var winDecider;
     beforeEach(function(){
         module('Tombola.WinDecider');
-        inject(function($injector){
-            winDecider=$injector.get('WinDecider');
-        });
+        inject(['WinDecider',function(_winDecider_){
+            winDecider=_winDecider_;
+        }]);
     });
     it('initialises winner to 0',function(){
         winDecider.winner.should.equal(0);

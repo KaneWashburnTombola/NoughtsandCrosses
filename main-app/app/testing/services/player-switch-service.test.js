@@ -2,9 +2,9 @@ describe('Player Switch Service',function(){
     var playerSwitcher;
     beforeEach(function() {
         module('Tombola.PlayerSwitcher');
-        inject(function($injector){
-            playerSwitcher=$injector.get('PlayerSwitcher');
-        });
+        inject(['PlayerSwitcher',function(_playerSwitcher_){
+            playerSwitcher=_playerSwitcher_;
+        }]);
     });
 
     it('initialise playerOne',function(){
