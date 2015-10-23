@@ -7,7 +7,7 @@
             q,
             deferred,
             stateSpy,
-            playerSwitchStub,
+            playerSwapSpy,
             winDeciderSpy,
             apiProxyStub;
         beforeEach(function () {
@@ -25,14 +25,7 @@
                 });
             });
             sandbox = sinon.sandbox.create();
-            playerSwitchStub = sinon.sandbox.stub(mocks.PlayerSwitcher, 'playerSwap',function(){
-                if(controller.currentPlayer===1){
-                    return 2;
-                }
-                else{
-                    return 1;
-                }
-            });
+            playerSwapSpy = sinon.sandbox.spy(mocks.PlayerSwitcher, 'playerSwap');
             stateSpy = sinon.sandbox.spy(mocks.$state, 'go');
             apiProxyStub=sinon.sandbox.stub(mocks.ApiProxy,'newTurn',function(){
                 return deferred.promise;
@@ -58,7 +51,7 @@
                 apiProxyStub.should.have.been.calledOnce;
             }
         });
-        it('should make turn then send player to appropriate state',function(){
+        it('should make turn then send player to appropriate state or swaps player',function(){
             controller.currentPlayer =1;
             scope.makeTurn(4);
             var myData={
@@ -77,11 +70,7 @@
             if(myData.data.outcome ==='Draw'){
                 stateSpy.should.have.been.calledOnce.calledWithExactly('draw');
             }
-        });
-        it('should change currentplayer',function(){
-           scope.makeTurn(5);
-            playerSwitchStub.should.have.been.calledOnce;
-            controller.currentPlayer.should.equal(2);
+            playerSwapSpy.should.have.been.calledOnce;
         });
     });
 })();
