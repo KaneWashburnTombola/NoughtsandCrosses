@@ -10,8 +10,8 @@ var mocks= {
     PlayerSwitcher: {
         playerOne: '',
         playerTwo: '',
-        gameBoard: '',
-        currentPlayer: 0,
+        gameBoard: '000000000',
+        currentPlayer: 1,
         playerSwitch: function () {
         },
         playerSwap: function () {
