@@ -23,7 +23,6 @@ var mocks= {
         }
     },
     $state: {
-        current: 'lobby',
         go: function () {
         }
     }
