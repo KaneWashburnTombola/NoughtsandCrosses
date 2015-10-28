@@ -2,7 +2,6 @@
     'use strict';
     angular.module('Tombola.Setup')
         .controller('TextController',['$scope','$state','ApiProxy','PlayerSwitcher',function($scope,$state,apiProxy,playerSwitcher){
-            $scope.titleMessage = "Welcome to Noughts and Crosses";
             $scope.playerOne = "human";
             $scope.playerTwo = "human";
             $scope.startGame=function(){

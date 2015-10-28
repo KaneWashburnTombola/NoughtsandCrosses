@@ -30,7 +30,6 @@
             sandbox.restore();
         });
         it('see if values are initialised',function(){
-            scope.titleMessage.should.equal('Welcome to Noughts and Crosses');
             scope.playerOne.should.equal('human');
             scope.playerTwo.should.equal('human');
         });
