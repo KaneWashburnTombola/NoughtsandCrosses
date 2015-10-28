@@ -1,6 +1,7 @@
 @background-color:#000000;
 @text-color:#ffffff;
 @background-image: url("../images/testnoughtsandcrosses.png");
+@background-image2:url("../images/sprites.png");
 
 body{
   background-color: @background-color;
@@ -54,21 +55,38 @@ table{
   height:500px;
   margin-left: 80%;
 }
+.pre-trained, .human, .random{
+  background-image: @background-image2;
+}
 .human{
-  background-position: 0 0;
+  background-position: 0;
   width: 100px;
   height: 96px;
 }
 
 .random{
-  background-position: -108px 0;
+  background-position: -108px;
   width: 98px;
   height: 98px;
 }
 
 .pre-trained{
-  background-position: -227px 0;
+  background-position: -227px;
   width: 100px;
   height: 98px;
 }
-
+.container{
+  display: inline-block;
+  align-content: center;
+  margin-left: 750px;
+}
+.player1span{
+  display: inline-block;
+}
+.player2span{
+  margin-left: 50px;
+  display:inline-block;
+}
+input{
+  margin-left: 880px;
+}

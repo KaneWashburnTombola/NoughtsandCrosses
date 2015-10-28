@@ -1,18 +1,5 @@
-<div ng-controller="TextContoller">
+<div ng-controller="TextController">
     <h1>Welcome to Noughts and Crosses</h1>
-    <h2>Player 1 :<img src="images/sprites.png"> </h2>
-    <select ng-model="playerOne">
-        <option value="human">Human</option>
-        <option value="random">Easy Computer</option>
-        <option value="pre-trained">Overkill Computer</option>
-    </select>
-    <h2>Player 2 :<img src="images/sprites.png"> </h2>
-    <select ng-model="playerTwo">
-        <option value="human">Human</option>
-        <option value="random">Easy Computer</option>
-        <option value="pre-trained">Overkill Computer</option>
-    </select>
-    <input type="button" value="Play!"ng-click="startGame()">
     <div class="rules">
         <h2>Rules</h2>
         <p>The rules to Noughts and Crosses are very simple and here they are!</p>
@@ -22,4 +9,22 @@
             <li>The first player to get 3 of their marks in a row going vertically, horizontally or diagonally wins!</li>
         </ul>
     </div>
+    <div class="container">
+        <span class="player1span">
+    <h2>Player 1 :<div class="{{playerOne}}"></div></h2>
+    <select ng-model="playerOne">
+        <option value="human">Human</option>
+        <option value="random">Easy Computer</option>
+        <option value="pre-trained">Overkill Computer</option>
+    </select></span>
+        <span class="player2span">
+    <h2>Player 2 :<div class="{{playerTwo}}"></div></h2>
+    <select ng-model="playerTwo">
+        <option value="human">Human</option>
+        <option value="random">Easy Computer</option>
+        <option value="pre-trained">Overkill Computer</option>
+    </select></span>
+    </div>
+    <br/>
+    <input type="button" value="Play!"ng-click="startGame()">
 </div>
